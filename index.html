@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptographic File Integrity Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Code+Latin:500,400" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>CRYPTOGRAPHIC FILE INTEGRITY CHECKER</h1>
+
+        <!-- Hash Generator Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>File Hash Generator</h2>
+            </div>
+            <div class="card-content">
+                <!-- File Upload Area -->
+                <div class="upload-area">
+                    <div class="upload-message">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        <p>Click to upload file</p>
+                    </div>
+                    <input type="file" id="file-input" style="display:none">
+                    <div class="file-name"></div>
+                </div>
+
+
+                <!-- Hash Algorithm Selection -->
+                <div class="algorithm-section">
+                    <p>Select two hashing algorithms:</p>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sha-256" value="sha256">
+                            <label for="sha-256">sha-256</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sha-512" value="sha512">
+                            <label for="sha-512">sha-512</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="blake-2b" value="blake2b">
+                            <label for="blake-2b">blake-2b</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sha3-256" value="sha3_256">
+                            <label for="sha3-256">sha3-256</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Hash Button -->
+                <div class="button-container">
+                    <button class="generate-button">Generate Hash</button>
+                </div>
+
+                <!-- Hash Result -->
+                <div class="result-section">
+                    <p>Final Hash value:</p>
+                    <div class="result-container">
+                        <div class="result-box"></div>
+                        <button class="copy-button">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Link -->
+        <div class="nav-link">
+            <a href="/checker" class="link-button">
+                Go to File Integrity Checker
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Link to the JavaScript -->
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+
+</html>
